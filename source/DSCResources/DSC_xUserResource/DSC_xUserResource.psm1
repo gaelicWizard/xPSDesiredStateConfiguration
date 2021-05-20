@@ -6,7 +6,10 @@ param ()
 $errorActionPreference = 'Stop'
 Set-StrictMode -Version 'Latest'
 
-$modulePath = Join-Path -Path (Split-Path -Path (Split-Path -Path $PSScriptRoot -Parent) -Parent) -ChildPath 'Modules'
+$modulePath = Join-Path -Path (Split-Path `
+    -Path (Split-Path `
+        -Path $PSScriptRoot -Parent) -Parent) `
+    -ChildPath 'Modules'
 
 # Import the shared modules
 Import-Module -Name (Join-Path -Path $modulePath `
